@@ -8,14 +8,12 @@
 		}
 		.content{
 			text-align: center;
+			font-size: 15px;
 		}
 		.content .title{
 			font-size: 25px;
 			font-weight: 50px;
 			margin-top: 20px;
-		}
-		.content{
-			font-size: 15px;
 		}
 		.content .addtag{
 			margin-top: 20px;
@@ -30,10 +28,29 @@
 	  <div class="content">
 	      <div class="title">iAmHades</div>
 	      <br/>
-	      <div class="content">Are you like this link?</div>
-          <div class="content">please save this link.</div>
-	      <div class="addtag"><input type="text" class="tag"></div>
+	      <div id="content" class="content">Are you like this link?<br/>please save this link.</div>
+	      <div class="addtag"><input id="tag" type="text" class="tag" onkey="save()"></div>
 	  </div>
 	</body>
 	<script src="../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+         $('#tag').keydown(function(event) {
+         	if (event.which == 13) {
+         		var url = safari.application.activeBrowserWindow.activeTab.url;
+         		var title = safari.application.activeBrowserWindow.activeTab.title;
+         		var tag = $('#tag').val();
+         		$.post('http://xxx/readinfo/save', {
+         			url: url,
+         			title: title,
+         			tag: tag ? tag : ''
+         		}, function(data) {
+                      $('#content').html('this link has been saved.');
+                      $('#tag').val('');
+                      setTimeout(function(){
+                          $('#content').html('Are you like this link?<br/>please save this link.');
+                      },2000);
+         		});
+         	}
+         });
+	</script>
 </html>
