@@ -39,7 +39,7 @@
          		var url = safari.application.activeBrowserWindow.activeTab.url;
          		var title = safari.application.activeBrowserWindow.activeTab.title;
          		var tag = $('#tag').val();
-         		$.post('http://xxx/readinfo/save', {
+         		$.post('http://xxx/url', {
          			url: url,
          			title: title,
          			tag: tag ? tag : ''
