@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>hades</string>
 	<key>Builder Version</key>
-	<string>11601.3.9</string>
+	<string>11601.4.4</string>
 	<key>CFBundleDisplayName</key>
 	<string>myblog</string>
 	<key>CFBundleIdentifier</key>
@@ -52,7 +52,7 @@
 		</array>
 	</dict>
 	<key>DeveloperIdentifier</key>
-	<string>DL37Y49Y6V</string>
+	<string>0000000000</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
